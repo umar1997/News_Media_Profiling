@@ -1,4 +1,5 @@
 {
     "news_sources_path" : "./Data/news_sources.json",
-    "news_profiling_data_path" : "./Data/news_profiling_data.json"
+    "news_profiling_data_path" : "./Data/news_profiling_data.json",
+    "twitter_sources_path" : "./Data/twitter_sources.json"
 }

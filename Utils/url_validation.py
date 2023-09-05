@@ -5,7 +5,7 @@ from validators import ValidationFailure
 
 # string.punctuation
 
-def check_child_news_article(self, parent_url:str, url_string: str) -> bool:
+def check_child_news_article(parent_url:str, url_string: str) -> bool:
     return True if parent_url in url_string else False
 
 class URLValidation:

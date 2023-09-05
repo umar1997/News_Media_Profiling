@@ -18,7 +18,7 @@ if __name__ == '__main__':
     logger_meta = get_logger(name='META', file_name=file_name, type='meta')
     logger_progress = get_logger(name='PROGRESS', file_name=file_name, type='progress')
 
-    logger_meta.warning('Start Time: {}'.format(date_time))
+    logger_meta.warning('Start Time: {}\n'.format(date_time))
     logger_object = [logger_meta, logger_progress]
 
     with open("./config_path.json", 'r') as f:
@@ -27,11 +27,7 @@ if __name__ == '__main__':
     with open(config_path["news_sources_path"], 'r') as f:
         news_source_list = json.load(f)
 
-    with open(config_path["news_profiling_data_path"], 'r') as f:
-        news_source_profile = json.load(f)
-
-    breakpoint()
-    article_retriever(config_path, news_source_list, news_source_profile, logger_object)
+    article_retriever(config_path, news_source_list, logger_object)
 
     date_time = datetime.now().strftime("%d-%m-%Y_%H:%M:%S")
     logger_meta.warning('End Time: {}'.format(date_time))

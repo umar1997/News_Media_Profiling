@@ -1,3 +1,308 @@
 {
-    
+    "https://crooked.com": {
+        "news_source": "https://crooked.com",
+        "news_source_normalized": "crooked.com",
+        "news_source_html": "",
+        "news_source_content": "",
+        "neighbouring_links_full_path": [],
+        "neighbouring_links_base_path": [],
+        "articles": {
+            "https://crooked.com/podcast/affirming-care-with-dr-kellan-baker/": {
+                "article_url": "https://crooked.com/podcast/affirming-care-with-dr-kellan-baker/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://crooked.com/articles/our-plan-to-restore-our-rights/": {
+                "article_url": "https://crooked.com/articles/our-plan-to-restore-our-rights/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://crooked.com/articles/new-crooked-podcasts-coming-summer-fall-2022-slate/": {
+                "article_url": "https://crooked.com/articles/new-crooked-podcasts-coming-summer-fall-2022-slate/",
+                "article_html": "",
+                "article_content": ""
+            }
+        },
+        "article_links": [
+            "https://crooked.com/podcast/affirming-care-with-dr-kellan-baker/",
+            "https://crooked.com/articles/our-plan-to-restore-our-rights/",
+            "https://crooked.com/articles/new-crooked-podcasts-coming-summer-fall-2022-slate/"
+        ],
+        "prev_labels": {
+            "fact": "high",
+            "bias": "left"
+        }
+    },
+    "http://deepleftfield.info": {
+        "news_source": "http://deepleftfield.info",
+        "news_source_normalized": "deepleftfield.info",
+        "news_source_html": "",
+        "news_source_content": "",
+        "neighbouring_links_full_path": [],
+        "neighbouring_links_base_path": [],
+        "articles": {
+            "https://deepleftfield.info/if-you-love-deep-left-field/": {
+                "article_url": "https://deepleftfield.info/if-you-love-deep-left-field/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://deepleftfield.info/conservatives-brand-barr-a-fat-as-deep-state-operative-for-refusing-to-back-trumps-election-lies/": {
+                "article_url": "https://deepleftfield.info/conservatives-brand-barr-a-fat-as-deep-state-operative-for-refusing-to-back-trumps-election-lies/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://deepleftfield.info/trump-planning-preemptive-insurance-policy-pardons-of-don-jr-ivanka-and-eric-report/": {
+                "article_url": "https://deepleftfield.info/trump-planning-preemptive-insurance-policy-pardons-of-don-jr-ivanka-and-eric-report/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://deepleftfield.info/stephen-millers-wife-announces-birth-of-their-first-child-and-gets-reminded-of-her-husbands-evil/": {
+                "article_url": "https://deepleftfield.info/stephen-millers-wife-announces-birth-of-their-first-child-and-gets-reminded-of-her-husbands-evil/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://deepleftfield.info/diaperdonald-trends-on-twitter-after-videos-of-trump-farting-in-public-go-viral/": {
+                "article_url": "https://deepleftfield.info/diaperdonald-trends-on-twitter-after-videos-of-trump-farting-in-public-go-viral/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://deepleftfield.info/is-donald-trump-planning-to-flee-the-country-before-january-20/": {
+                "article_url": "https://deepleftfield.info/is-donald-trump-planning-to-flee-the-country-before-january-20/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://deepleftfield.info/looks-like-trumps-former-campaign-manager-might-be-ready-to-blow-the-whistle-on-his-ex-boss/": {
+                "article_url": "https://deepleftfield.info/looks-like-trumps-former-campaign-manager-might-be-ready-to-blow-the-whistle-on-his-ex-boss/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://deepleftfield.info/melanias-plan-to-write-a-memoir-draws-suggestions-for-an-appropriate-title/": {
+                "article_url": "https://deepleftfield.info/melanias-plan-to-write-a-memoir-draws-suggestions-for-an-appropriate-title/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://deepleftfield.info/trump-gets-busted-using-information-from-the-wrong-election-to-prove-voter-fraud/": {
+                "article_url": "https://deepleftfield.info/trump-gets-busted-using-information-from-the-wrong-election-to-prove-voter-fraud/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://deepleftfield.info/trumps-lawsuits-and-recounts-prove-he-lost-by-an-even-larger-margin-than-first-believed/": {
+                "article_url": "https://deepleftfield.info/trumps-lawsuits-and-recounts-prove-he-lost-by-an-even-larger-margin-than-first-believed/",
+                "article_html": "",
+                "article_content": ""
+            }
+        },
+        "article_links": [
+            "https://deepleftfield.info/if-you-love-deep-left-field/",
+            "https://deepleftfield.info/conservatives-brand-barr-a-fat-as-deep-state-operative-for-refusing-to-back-trumps-election-lies/",
+            "https://deepleftfield.info/trump-planning-preemptive-insurance-policy-pardons-of-don-jr-ivanka-and-eric-report/",
+            "https://deepleftfield.info/stephen-millers-wife-announces-birth-of-their-first-child-and-gets-reminded-of-her-husbands-evil/",
+            "https://deepleftfield.info/diaperdonald-trends-on-twitter-after-videos-of-trump-farting-in-public-go-viral/",
+            "https://deepleftfield.info/is-donald-trump-planning-to-flee-the-country-before-january-20/",
+            "https://deepleftfield.info/looks-like-trumps-former-campaign-manager-might-be-ready-to-blow-the-whistle-on-his-ex-boss/",
+            "https://deepleftfield.info/melanias-plan-to-write-a-memoir-draws-suggestions-for-an-appropriate-title/",
+            "https://deepleftfield.info/trump-gets-busted-using-information-from-the-wrong-election-to-prove-voter-fraud/",
+            "https://deepleftfield.info/trumps-lawsuits-and-recounts-prove-he-lost-by-an-even-larger-margin-than-first-believed/"
+        ],
+        "prev_labels": {
+            "fact": "mixed",
+            "bias": "left"
+        }
+    },
+    "https://antifascistnews.net": {
+        "news_source": "https://antifascistnews.net",
+        "news_source_normalized": "antifascistnews.net",
+        "news_source_html": "",
+        "news_source_content": "",
+        "neighbouring_links_full_path": [],
+        "neighbouring_links_base_path": [],
+        "articles": {
+            "https://antifascistnews.net/2022/04/26/the-gilad-atzmon-and-david-rovics-antisemitism-controversy-explained/": {
+                "article_url": "https://antifascistnews.net/2022/04/26/the-gilad-atzmon-and-david-rovics-antisemitism-controversy-explained/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://electronicintifada.net/blogs/ali-abunimah/palestinian-writers-activists-disavow-racism-anti-semitism-gilad-atzmon": {
+                "article_url": "https://electronicintifada.net/blogs/ali-abunimah/palestinian-writers-activists-disavow-racism-anti-semitism-gilad-atzmon",
+                "article_html": "",
+                "article_content": ""
+            },
+            "http://transformativestudies.org/publications/journal-of-social-justice/past-issues-jsj/journal-of-social-justice-volume-9-2019/": {
+                "article_url": "http://transformativestudies.org/publications/journal-of-social-justice/past-issues-jsj/journal-of-social-justice-volume-9-2019/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "http://itsgoingdown.org/no-it-is-the-children-who-are-wrong-a-response-to-david-rovics": {
+                "article_url": "http://itsgoingdown.org/no-it-is-the-children-who-are-wrong-a-response-to-david-rovics",
+                "article_html": "",
+                "article_content": ""
+            },
+            "http://newsy.com/stories/extremist-heimbach-to-relaunch-hate-group-supports-violence-3/": {
+                "article_url": "http://newsy.com/stories/extremist-heimbach-to-relaunch-hate-group-supports-violence-3/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "http://politicalresearch.org/2017/10/23/kevin-barrett-repackaging-antisemitism": {
+                "article_url": "http://politicalresearch.org/2017/10/23/kevin-barrett-repackaging-antisemitism",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://forward.com/opinion/389696/cloaked-in-pretensions-gilad-atzmons-anti-semitism-soldiers-on/": {
+                "article_url": "https://forward.com/opinion/389696/cloaked-in-pretensions-gilad-atzmons-anti-semitism-soldiers-on/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "http://counterpunch.org/2006/03/25/blaming-the-israel-lobby/": {
+                "article_url": "http://counterpunch.org/2006/03/25/blaming-the-israel-lobby/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "http://jewishnews.co.uk/jewish-students-told-dont-study-at-lse-by-board-president": {
+                "article_url": "http://jewishnews.co.uk/jewish-students-told-dont-study-at-lse-by-board-president",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://proteanmag.com/2021/05/25/liberation-itself-is-sacred/": {
+                "article_url": "https://proteanmag.com/2021/05/25/liberation-itself-is-sacred/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "http://politicalresearch.org/campus-profile-alison-weir-if-americans-knew": {
+                "article_url": "http://politicalresearch.org/campus-profile-alison-weir-if-americans-knew",
+                "article_html": "",
+                "article_content": ""
+            },
+            "http://therealnews.com/matthew-heimbach-and-the-lefts-vulnerability-to-fascist-infiltration": {
+                "article_url": "http://therealnews.com/matthew-heimbach-and-the-lefts-vulnerability-to-fascist-infiltration",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://libcom.org/article/anti-semitism-and-national-socialism-notes-german-reaction-holocaust": {
+                "article_url": "https://libcom.org/article/anti-semitism-and-national-socialism-notes-german-reaction-holocaust",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://antifascistnews.net/2019/09/09/colonialism-green-resistance-and-fighting-eco-fascism-an-interview-with-eco-anarchist-kevin-tucker/": {
+                "article_url": "https://antifascistnews.net/2019/09/09/colonialism-green-resistance-and-fighting-eco-fascism-an-interview-with-eco-anarchist-kevin-tucker/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://www.bitchmedia.org/article/heart-of-whiteness-spiritual-tourism-colonization-ayahuasca": {
+                "article_url": "https://www.bitchmedia.org/article/heart-of-whiteness-spiritual-tourism-colonization-ayahuasca",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://antifascistnews.net/2019/08/29/nationalism-is-no-alternative-an-interview-with-german-antifascists/": {
+                "article_url": "https://antifascistnews.net/2019/08/29/nationalism-is-no-alternative-an-interview-with-german-antifascists/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://antifascistnews.net/2019/07/29/support-no-pasaran-a-new-patreon-to-research-and-report-on-fascism-and-build-resistance/": {
+                "article_url": "https://antifascistnews.net/2019/07/29/support-no-pasaran-a-new-patreon-to-research-and-report-on-fascism-and-build-resistance/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://antifascistnews.net/2019/06/19/community-action-anti-trans-speaker-with-ties-to-soldiers-of-odin-and-proud-boys-set-to-speak-in-vancouver-on-june-23/": {
+                "article_url": "https://antifascistnews.net/2019/06/19/community-action-anti-trans-speaker-with-ties-to-soldiers-of-odin-and-proud-boys-set-to-speak-in-vancouver-on-june-23/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://antifascistnews.net/2019/03/18/three-strikes-and-molyneux-and-southern-are-out-of-vancouver-for-now/": {
+                "article_url": "https://antifascistnews.net/2019/03/18/three-strikes-and-molyneux-and-southern-are-out-of-vancouver-for-now/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://antifascistnews.net/2018/10/15/anti-fascist-mobilization-opposes-pegida-soldiers-of-odin-and-wolves-of-odin-in-london-ontario/": {
+                "article_url": "https://antifascistnews.net/2018/10/15/anti-fascist-mobilization-opposes-pegida-soldiers-of-odin-and-wolves-of-odin-in-london-ontario/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://antifascistnews.net/2018/11/15/survivors-and-antifascists-confronting-misogynists-proud-boys-and-patriot-prayer-in-portland-this-saturday/": {
+                "article_url": "https://antifascistnews.net/2018/11/15/survivors-and-antifascists-confronting-misogynists-proud-boys-and-patriot-prayer-in-portland-this-saturday/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://antifascistnews.net/2019/05/14/pegida-racists-rally-again-in-toronto-confronted-by-antifascsists-may-4-2019/": {
+                "article_url": "https://antifascistnews.net/2019/05/14/pegida-racists-rally-again-in-toronto-confronted-by-antifascsists-may-4-2019/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://antifascistnews.net/2019/03/13/antifascist-mobilization-leads-two-venues-to-cancel-molyneux-and-southern-event-in-vancouver-bc-free-speechers-turn-to-secret-location-for-march-15/": {
+                "article_url": "https://antifascistnews.net/2019/03/13/antifascist-mobilization-leads-two-venues-to-cancel-molyneux-and-southern-event-in-vancouver-bc-free-speechers-turn-to-secret-location-for-march-15/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://antifascistnews.net/2019/02/22/militancy-in-the-workplace-interview-with-iww-organizer-doug-geisler-pt-2/": {
+                "article_url": "https://antifascistnews.net/2019/02/22/militancy-in-the-workplace-interview-with-iww-organizer-doug-geisler-pt-2/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://antifascistnews.net/2019/02/14/how-we-can-organize-and-beat-back-our-boss-an-interview-with-union-militant-doug-geisler/": {
+                "article_url": "https://antifascistnews.net/2019/02/14/how-we-can-organize-and-beat-back-our-boss-an-interview-with-union-militant-doug-geisler/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://antifascistnews.net/2019/02/21/trumps-betrayal-of-syria-paris-commune-falls-again/": {
+                "article_url": "https://antifascistnews.net/2019/02/21/trumps-betrayal-of-syria-paris-commune-falls-again/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://vt.aflcio.org/green-mountain-labor-council/news/solidarity-struggle-rojava": {
+                "article_url": "https://vt.aflcio.org/green-mountain-labor-council/news/solidarity-struggle-rojava",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://jeshuaists.wordpress.com/2022/05/06/tel-aviv-university-study-found-a-record-high-number-of-reports-of-antisemitic-activity-throughout-the-world-in-2021/": {
+                "article_url": "https://jeshuaists.wordpress.com/2022/05/06/tel-aviv-university-study-found-a-record-high-number-of-reports-of-antisemitic-activity-throughout-the-world-in-2021/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://immanuelverbondskind.wordpress.com/2022/05/05/more-than-seven-anti-semitic-incidents-in-the-u-s-a-per-day/": {
+                "article_url": "https://immanuelverbondskind.wordpress.com/2022/05/05/more-than-seven-anti-semitic-incidents-in-the-u-s-a-per-day/",
+                "article_html": "",
+                "article_content": ""
+            },
+            "https://steppingtoes.wordpress.com/2022/05/05/anti-semitism-dramatic-rise-in-2021-israeli-report-says/": {
+                "article_url": "https://steppingtoes.wordpress.com/2022/05/05/anti-semitism-dramatic-rise-in-2021-israeli-report-says/",
+                "article_html": "",
+                "article_content": ""
+            }
+        },
+        "article_links": [
+            "https://antifascistnews.net/2022/04/26/the-gilad-atzmon-and-david-rovics-antisemitism-controversy-explained/",
+            "https://electronicintifada.net/blogs/ali-abunimah/palestinian-writers-activists-disavow-racism-anti-semitism-gilad-atzmon",
+            "http://transformativestudies.org/publications/journal-of-social-justice/past-issues-jsj/journal-of-social-justice-volume-9-2019/",
+            "http://itsgoingdown.org/no-it-is-the-children-who-are-wrong-a-response-to-david-rovics",
+            "http://newsy.com/stories/extremist-heimbach-to-relaunch-hate-group-supports-violence-3/",
+            "http://politicalresearch.org/2017/10/23/kevin-barrett-repackaging-antisemitism",
+            "https://forward.com/opinion/389696/cloaked-in-pretensions-gilad-atzmons-anti-semitism-soldiers-on/",
+            "http://counterpunch.org/2006/03/25/blaming-the-israel-lobby/",
+            "http://jewishnews.co.uk/jewish-students-told-dont-study-at-lse-by-board-president",
+            "https://proteanmag.com/2021/05/25/liberation-itself-is-sacred/",
+            "http://politicalresearch.org/campus-profile-alison-weir-if-americans-knew",
+            "http://therealnews.com/matthew-heimbach-and-the-lefts-vulnerability-to-fascist-infiltration",
+            "https://libcom.org/article/anti-semitism-and-national-socialism-notes-german-reaction-holocaust",
+            "https://antifascistnews.net/2019/09/09/colonialism-green-resistance-and-fighting-eco-fascism-an-interview-with-eco-anarchist-kevin-tucker/",
+            "https://www.bitchmedia.org/article/heart-of-whiteness-spiritual-tourism-colonization-ayahuasca",
+            "https://antifascistnews.net/2019/08/29/nationalism-is-no-alternative-an-interview-with-german-antifascists/",
+            "https://antifascistnews.net/2019/07/29/support-no-pasaran-a-new-patreon-to-research-and-report-on-fascism-and-build-resistance/",
+            "https://antifascistnews.net/2019/06/19/community-action-anti-trans-speaker-with-ties-to-soldiers-of-odin-and-proud-boys-set-to-speak-in-vancouver-on-june-23/",
+            "https://antifascistnews.net/2019/03/18/three-strikes-and-molyneux-and-southern-are-out-of-vancouver-for-now/",
+            "https://antifascistnews.net/2018/10/15/anti-fascist-mobilization-opposes-pegida-soldiers-of-odin-and-wolves-of-odin-in-london-ontario/",
+            "https://antifascistnews.net/2018/11/15/survivors-and-antifascists-confronting-misogynists-proud-boys-and-patriot-prayer-in-portland-this-saturday/",
+            "https://antifascistnews.net/2019/05/14/pegida-racists-rally-again-in-toronto-confronted-by-antifascsists-may-4-2019/",
+            "https://antifascistnews.net/2019/03/13/antifascist-mobilization-leads-two-venues-to-cancel-molyneux-and-southern-event-in-vancouver-bc-free-speechers-turn-to-secret-location-for-march-15/",
+            "https://antifascistnews.net/2019/02/22/militancy-in-the-workplace-interview-with-iww-organizer-doug-geisler-pt-2/",
+            "https://antifascistnews.net/2019/02/14/how-we-can-organize-and-beat-back-our-boss-an-interview-with-union-militant-doug-geisler/",
+            "https://antifascistnews.net/2019/02/21/trumps-betrayal-of-syria-paris-commune-falls-again/",
+            "https://vt.aflcio.org/green-mountain-labor-council/news/solidarity-struggle-rojava",
+            "https://jeshuaists.wordpress.com/2022/05/06/tel-aviv-university-study-found-a-record-high-number-of-reports-of-antisemitic-activity-throughout-the-world-in-2021/",
+            "https://immanuelverbondskind.wordpress.com/2022/05/05/more-than-seven-anti-semitic-incidents-in-the-u-s-a-per-day/",
+            "https://steppingtoes.wordpress.com/2022/05/05/anti-semitism-dramatic-rise-in-2021-israeli-report-says/"
+        ],
+        "prev_labels": {
+            "fact": "high",
+            "bias": "left"
+        }
+    }
 }
