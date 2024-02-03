@@ -1,2 +1,4 @@
+Log_Files/
 newsEnv/
 **/__pycache__
+Data/news_profiling_data.json

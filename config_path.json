@@ -1,5 +1,6 @@
 {
-    "news_sources_path" : "./Data/news_sources.json",
-    "news_profiling_data_path" : "./Data/news_profiling_data.json",
-    "twitter_sources_path" : "./Data/twitter_sources.json"
+    "data_path": "./Data/",
+    "news_sources_path" : "./Data/news_sources_final.json",
+    "news_website_data_path" : "./Data/news_website_data.json",
+    "old_news_website_data_path" : "./Data/news_profiling_data.json"
 }
