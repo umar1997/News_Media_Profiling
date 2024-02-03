@@ -1,148 +1,168 @@
+import os
+import sys
+import time
 import json
-import newspaper
+
+import requests
+from tqdm import tqdm
 from datetime import datetime
-from newspaper import Article
+
+import newspaper
+import trafilatura
+from bs4 import BeautifulSoup
 
 from Utils.url_validation import URLValidation, check_child_news_article
-from Utils.helpers import append_http
+from Utils.article_retriever_helpers import *
+from Utils.neighbouring_link_helpers import check_neighbour_link_is_social_media, check_neighbour_link_is_not_child_article, check_neighbour_links_in_child_articles
 
 def get_templates():
 
-    template_articles = {
-            "article_url": "",
-            "article_html": "",
-            "article_content": "",
-        }
-
     template_data = {
-        "news_source": "",
-        "news_source_normalized": "",
-        "news_source_html": "",
-        "news_source_content": "",
-        "neighbouring_links_full_path": [],
-        "neighbouring_links_base_path": [],
-        "articles": {},
-        "article_links": [],
-        "prev_labels": {}
+        "news_id": None,
+        "news_source_url": "",
+        "title":"",
+        "news_source_text": "",
+        "neighbouring_path": [],
+        "social_media":{
+            "twitter":"",
+            "facebook":"",
+            "instagram":"",
+            "youtube":""
+        },
+        "error": ""
     }
 
-    return template_data, template_articles
+    return template_data
 
-def get_specific_article_data(news_source_key, news_source_url, total_articles, news_data, news_source_profile, logger_object, url_validator, template_articles):
+INVALID_URL = '<INVALID_URL>'
+DOWNLOAD_FAILED = '<DOWNLOAD_FAILED>'
+EXPIRED_URL = '<EXPIRED_URL>'
+TIMEOUT_URL = '<TIMEOUT_URL>'
+EMPTY_DATA = '<EMPTY_DATA>'
 
-    """
-    news_source_key: base URL of news source taken from the list of news source links to scrape
-    news_source_url: The URL for the News Source we are scraping
-    total_articles: All the articles of that news source
-    news_source_profile: The dictionary from .json loaded file 
-    logger_object: Contains both loggers
-    url_validator: Helps to validate whether the URL is valid or not
-    template_articles: The template for articles provided by function 'get_templates()'
-    news_data: Data Object for the News Source that is to be written into the .json file for that News Source
-    
-    """
-    logger_meta, logger_progress = logger_object
-    for news_source_article in total_articles:
-        news_article_url = news_source_article.url
+def get_neighbouring_links(news_source_url, home_url, total_articles, news_data, news_source_profile, url_validator):
 
-        logger_progress.critical('Article: {}'.format(news_article_url))
+    not_child_counter = 0
+    for news_article_url in total_articles:
+
+        is_social_media , news_article_url = check_neighbour_link_is_social_media(news_article_url)
+        if is_social_media:
+            continue
+
+        is_child_news_article = check_child_news_article(news_source_url, news_article_url)
+        if not is_child_news_article:
+        not_child_counter, news_data = check_neighbour_link_is_not_child_article(news_data, news_article_url, home_url, not_child_counter)
+            continue
 
         is_valid_url = url_validator.run_validation(news_article_url)
         if is_valid_url:
-            article_data = template_articles.copy()
-            is_child_news_article = check_child_news_article(news_source_url, news_article_url)
-            try:
-                news_article = Article(news_article_url)
-                if not is_child_news_article:
-                    base_path , _ = URLValidation.extract_url_parts(news_article_url)
-                    if not base_path: 
-                        news_data["neighbouring_links_full_path"].append(news_article_url)
-                        news_data["neighbouring_links_base_path"].append(base_path)
-                
-                # Specififc Article Data
-                news_article.download()
-                article_data["article_url"] = news_article_url
-                news_data["article_links"].append(news_article_url)
-                article_data["article_content"] = news_article.text
-                # article_data["article_html"] = news_article.html
 
-                if news_article_url not in news_data["articles"]:
-                    news_data["articles"][news_article_url] = article_data
-
-                # Adding to existing news_profiling_data.json file
-                news_source_profile[news_source_key] = news_data
-                
-            except Exception as e:
-                logger_progress.critical("Failure: Issue with this article URL: {}".format(news_article_url))
-                logger_progress.critical("Exception: {}".format(e))
         else:
-            continue
-            # logger_progress.critical("News Article Invalid: {}".format(news_article_url))
+            news_data["error"] = INVALID_URL
 
-    logger_object = [logger_meta, logger_progress] 
-    return news_source_profile, logger_object
+    news_data["neighbouring_path"] = list(set(news_data["neighbouring_path"]))
+    if not_child_counter == len(total_articles):
+        news_data["error"] = EXPIRED_URL
+    if abs(not_child_counter - len(total_articles)) <= 3:
+        news_data["error"] = EXPIRED_URL
+    
+    return news_data
 
 
 
+def article_retriever(config_path, news_source_list):
 
-def article_retriever(config_path, news_source_list, logger_object):
 
-    logger_meta, logger_progress = logger_object
-    url_validator = URLValidation()
+    with open('output.log', 'w') as log_file:
+        sys.stdout = log_file
+        
+        url_validator = URLValidation()
 
-    for news_source_key, news_source_value in news_source_list.items():
+        index = 1
+        for news_source_key, news_source_value in tqdm(news_source_list.items()):
+            
+            news_source_url = news_source_key
+            template_data = get_templates()
+            news_data = template_data.copy()
 
-        template_data, template_articles = get_templates()
-        logger_meta.warning('News Source: {}'.format(news_source_key))
+            print("************* {} *************".format(index))
+            print('News Source: {}'.format(news_source_url))
 
-        with open(config_path["news_profiling_data_path"], 'r') as f:
-            news_source_profile = json.load(f)
+            with open(config_path["news_website_data_path"], 'r') as f:
+                news_source_profile = json.load(f)
 
-        # Check if the news source has been scraped or not and the articles scraped are atleast of count X
-        if news_source_key not in news_source_profile : 
+    #############################################################################################
+            with open(config_path["old_news_website_data_path"], 'r') as f:
+                old_news_source_profile = json.load(f)
+            
+            if (news_source_url in old_news_source_profile):
+                article_expired, news_data = get_previosly_retrieved_data(news_data, news_source_url, index, news_source_profile, old_news_source_profile)
+                if article_expired:
+                    news_data["error"] = EXPIRED_URL
+                
+                write_to_data(config_path, news_source_url, news_source_profile, news_data)
+                index += 1
+                continue
+    #############################################################################################
 
-            # If the url doesn't have http or https in the beginning then add it
-            news_source_url = append_http(news_source_key)
+            # Already been scraped
+            if news_source_url in news_source_profile:
+                print('Info: News Source already has been scraped: {}\n'.format(news_source_url))
+                index += 1
+                continue
 
-            # Check if url meets the valid criteria
-            is_valid_url = URLValidation.is_string_an_url(news_source_url)
-            if is_valid_url:
+            else: 
 
-                try:
-                    news_data = template_data.copy()
+                # Append http:// if url doesn't have it and validate if valid url (from Utils.url_validation)
+                is_valid_url = URLValidation.is_string_an_url(news_source_url)
 
-                    news_source = Article(news_source_url)
-                    news_source.download()
-                    news_data["news_source"] = news_source_url
-                    news_data["news_source_normalized"] = news_source_value["source_url_normalized"]
-                    news_data["news_source_content"] = news_source.text
-                    news_data["prev_labels"] = {"fact": news_source_value["fact"], "bias":news_source_value["bias"]}
-                    # news_data["news_source_html"] = news_source.html
+                news_data = template_data.copy()
+                news_data["news_id"] = index
+                news_data["news_source_url"] = news_source_url
+                news_data["news_source_normalized"] = home_url
+                news_data["title"] = ""
+                news_data["news_source_text"] = ""
 
-                    news_source_urls = newspaper.build(news_source_url, memoize_articles=False)
-                    logger_progress.critical('Success: Successfully extracted/downloaded {}'.format(news_source_url))
+                # Get article links embedded in the website
+                if not is_valid_url:
+                    news_data["error"] = INVALID_URL
+                    print("News Source: {} Error: {} ".format(news_source_url, news_data["error"]))
+                    write_to_data(config_path, news_source_url, news_source_profile, news_data)
+                    index += 1
+                    continue
+                else:
 
-                    total_articles  = news_source_urls.articles
-                    logger_progress.critical('Total number of articles for news source found: {}'.format(len(total_articles)))
-                    breakpoint()
-                    logger_object = [logger_meta, logger_progress]
+                    # newspaper3k
+                    news_data, total_articles = get_from_newspaper3k(news_source_url, news_data)
 
-                    # Get all articles data
-                    news_source_profile, logger_object = get_specific_article_data(news_source_key, news_source_url, total_articles, news_data, news_source_profile, logger_object, url_validator, template_articles)
+                    # Trafilatura to Download
+                    result, downloaded_raw_html = get_from_trafilatura(news_source_url, news_data)
 
-                    with open('./Data/news_profiling_data.json', 'w') as file:
-                        json.dump(news_source_profile, file, indent=4)
+                    if result:
+                        result = result.replace('null','None')
+                        result = eval(result)
+                        
+                        news_data["title"] = "" if result["title"] == None else result["title"]
+                        news_data["news_source_text"] = "" if result["text"] == None else result["text"]
+                    else:
+                        news_data["title"] = ""
+                        news_data["news_source_text"] = ""
+                        news_data["error"] = EMPTY_DATA
 
-                except Exception as e:
-                    logger_progress.critical('Failure: Failed to extract/download {}'.format(news_source_url))
-                    logger_progress.critical('Error: {}'.format(e))
+                    # BeautifulSoup                          
+                    if downloaded_raw_html:
+                        total_articles, news_data = get_from_beautifulsoup(news_data, downloaded_raw_html, total_articles)
+                    else:
+                        news_data["error"] = DOWNLOAD_FAILED
+    
+                    total_articles = list(total_articles)
+                    news_data = get_neighbouring_links(news_source_url, home_url, total_articles, news_data, news_source_profile, url_validator)
 
-            else:
-                print("{}: is an invalid news source url".format(news_source_url))
+                    write_to_data(config_path, news_source_url, news_source_profile, news_data)
+                    index+= 1
 
-            date_time = datetime.now().strftime("%d-%m-%Y_%H:%M:%S")
-            logger_meta.warning('Current Time: {}\n'.format(date_time))
-        else:
-            logger_progress.critical('News Source already has been scraped: {}\n'.format(news_source_key))
+                    time.sleep(5)
+        
+    sys.stdout = sys.__stdout__
         
 
